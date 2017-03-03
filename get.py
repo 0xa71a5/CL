@@ -29,7 +29,7 @@ def thread_function(start,end,directoryBegin):
     pageReverse=0
     for page in range(start,end-1,-1):
         try:
-            r = requests.get('http://c6.h0j.org/thread0806.php?fid=16&search=&page='+str(page),headers=headers)
+            r = requests.get('http://xxx.org/thread0806.php?fid=16&search=&page='+str(page),headers=headers)
             data=r.text.encode(r.encoding)
             r=re.compile(r".+\[\d+\]")
             index=0
@@ -49,7 +49,7 @@ def thread_function(start,end,directoryBegin):
                     if(len(data[index:index2])==0):
                         print "Page none ,break"
                         continue
-                    imgReq = requests.get('http://c6.h0j.org/'+url,headers=headers)
+                    imgReq = requests.get('http://xxx.org/'+url,headers=headers)
                     imgHtml=imgReq.text.encode(imgReq.encoding)
                     info=getImage(imgHtml)
                     print info
